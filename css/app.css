@@ -6,7 +6,7 @@ th input {
     font-weight: bold;
 }
 
-input[type=submit] {
+#home input[type=submit] {
     padding: 0;
     background: none;
     outline: none;
