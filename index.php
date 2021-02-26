@@ -1,5 +1,7 @@
 <?php
 
+    define( "BASE_URL", 'http://localhost/webtech/zadanie1/' );
+
     if( isset( $_GET[ 'folder' ] ) && $_GET['folder'] != 'files' ) {
         $folder = rtrim( $_GET[ 'folder' ], '/' ) . '/';
     } else {
@@ -79,8 +81,12 @@
 <body>
   
 
-    <main class="py-5">
+    <main id="home" class="py-5">
         <div class="container">
+            <div class="mb-4">
+                <a href="upload.php">Upload new file</a>
+            </div>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -147,6 +153,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+
         </div>
 
     </main>
