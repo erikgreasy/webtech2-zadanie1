@@ -7,11 +7,11 @@
         // print_r( $_POST );
         // die();
         if( isset( $_FILES['file']['error'] ) ) {
-            $errors['file'] = 'Subor je povinna polozka';
+            $errors[] = 'Subor je povinna polozka';
         }
 
         if( trim( $_POST['name'] ) == '' ) {
-            $errors['name'] = 'Meno suboru je povinne';
+            $errors[] = 'Meno suboru je povinna polozka';
         }
 
         // print_r( $errors );
@@ -53,7 +53,15 @@
 
             <?php if( !empty( $errors ) ): ?>
 
-                <?php print_r( $errors ) ?>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <?php foreach( $errors as $error ): ?>
+                            <li>
+                                <?= $error ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
 
             <?php endif; ?>
 
@@ -61,13 +69,13 @@
                 <div class="form-group">
                     <label for="name">
                         Názov súboru:
-                        <input type="text" name="name" id="name" class="form-control">
+                        <input type="text" name="name" id="name" class="form-control" required>
                     </label>
                 </div>
 
                 <div class="form-group">
                     <label for="file">
-                        <input type="file" name="file" id="file">
+                        <input type="file" name="file" id="file" required>
                     </label>
                 </div>
 
