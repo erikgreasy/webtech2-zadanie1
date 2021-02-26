@@ -2,6 +2,9 @@ form {
     margin-bottom: 0;
 }
 
+th input {
+    font-weight: bold;
+}
 
 input[type=submit] {
     padding: 0;
