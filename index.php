@@ -1,6 +1,8 @@
 <?php
 
     define( "BASE_URL", 'http://localhost/webtech/zadanie1/' );
+    date_default_timezone_set('Europe/Bratislava');
+
 
     if( isset( $_GET[ 'folder' ] ) && $_GET['folder'] != 'files' ) {
         $folder = rtrim( $_GET[ 'folder' ], '/' ) . '/';
@@ -146,7 +148,7 @@
                                         <?= $file['name'] ?>
                                     </td>
                                     <td class="size"><?= $file['size'] ?></td>
-                                    <td><?= date( 'd.m.Y H:m:s',  $file['date'] ) ?></td>
+                                    <td><?= date( 'd.m.Y H:i:s',  $file['date'] ) ?></td>
                                 <?php endif; ?>
                             </tr>
                         <?php endif; ?>

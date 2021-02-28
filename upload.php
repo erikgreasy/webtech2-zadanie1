@@ -4,9 +4,8 @@
     if( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 
         $errors = [];
-        // print_r( $_POST );
-        // die();
-        if( isset( $_FILES['file']['error'] ) ) {
+        
+        if( isset( $_FILES['file']['error'] ) && $_FILES['file']['error'] ) {
             $errors[] = 'Subor je povinna polozka';
         }
 
@@ -14,12 +13,25 @@
             $errors[] = 'Meno suboru je povinna polozka';
         }
 
-        // print_r( $errors );
+        // print_r( explode( '.', $_FILES['file']['name'] ) );
         // die();
 
         if( empty( $errors ) ) {
             $target_dir = 'files/';
-            $target_file = $target_dir . $_FILES['file']['name'];
+
+            $name_arr = explode( '.', $_FILES['file']['name'] );
+            $extension = array_pop( $name_arr );
+
+            if( file_exists( $target_dir . $_POST[ 'name' ] . '.' . $extension ) ) {
+                $file_name = $_POST[ 'name' ] . time() . '.' . $extension;
+                // die( $file_name );
+            } else {
+                // die($_POST[ 'name' ] . '.' . $extension);
+
+                $file_name = $_POST[ 'name' ] . '.' . $extension;
+            }
+
+            $target_file = $target_dir . $file_name;
 
             move_uploaded_file($_FILES['file']['tmp_name'], $target_file );
             
