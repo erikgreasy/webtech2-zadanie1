@@ -34,7 +34,9 @@
             $target_file = $target_dir . $file_name;
 
             // Upload file to destination
-            move_uploaded_file($_FILES['file']['tmp_name'], $target_file );
+            if( !move_uploaded_file($_FILES['file']['tmp_name'], $target_file ) ) {
+                die( 'Something went wrong on file upload' );
+            }
             
             // Redirect user to homepage
             header( 'Location: ' . BASE_URL );
