@@ -35,7 +35,7 @@
 
             // Upload file to destination
             if( !move_uploaded_file($_FILES['file']['tmp_name'], $target_file ) ) {
-                die( 'Something went wrong on file upload' );
+                die( 'Something went wrong on file upload. Error code: ' . $_FILES['file']['error'] );
             }
             
             // Redirect user to homepage
