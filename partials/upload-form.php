@@ -1,4 +1,4 @@
-<form action="" enctype="multipart/form-data" method="POST">
+<form action="#" enctype="multipart/form-data" method="POST">
 
     <?php include_once 'upload-form-errors.php' ?>
 

@@ -2,21 +2,21 @@
     <thead>
         <tr>
             <th id="name-th">
-                <form action="" method="GET">
+                <form action="#" method="GET">
                     <input type="hidden" name="folder" value="<?= $folder ?>">
                     <input type="hidden" name="order" value="name">
                     <input type="submit" value="Meno">
                 </form>
             </th>
             <th id="size-th">
-                <form action="" method="GET">
+                <form action="#" method="GET">
                     <input type="hidden" name="folder" value="<?= $folder ?>">
                     <input type="hidden" name="order" value="size">
                     <input type="submit" value="Veľkosť">
                 </form>
             </th>
             <th id="date-th">
-                <form action="" method="GET">
+                <form action="#" method="GET">
                     <input type="hidden" name="folder" value="<?= $folder ?>">
                     <input type="hidden" name="order" value="date">
                     <input type="submit" value="Dátum">
