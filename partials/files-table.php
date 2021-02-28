@@ -32,7 +32,7 @@
                 <?php if( $folder != 'files/' ): ?>
                     <tr class="table-row">
                         <td class="name">
-                            <form action="" method="GET">
+                            <form action="#" method="GET">
                                 <input type="hidden" name="folder" id=".." value="<?= dirname( $folder, 1 ) ?>">
                                 <input type="submit" value="<?= $file['name'] ?>">
                             </form>
@@ -45,7 +45,7 @@
                 <tr class="table-row">
                     <?php if( is_dir( $folder . $file['name'] ) ): ?>
                         <td class="name">
-                            <form action="" method="GET">
+                            <form action="#" method="GET">
                                 <input type="hidden" name="folder" id="<?= $file ?>" value="<?= $folder . $file['name'] ?>">
                                 <input type="submit" value="<?= $file['name'] ?>">
                             </form>
