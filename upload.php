@@ -52,7 +52,7 @@
 
 <main id="upload" class="py-5">
     <div class="container">
-        <h1 class="mb-4" enc>Nahrajte svoj súbor</h1>
+        <h1 class="mb-4">Nahrajte svoj súbor</h1>
 
         <?php include_once 'partials/upload-form.php' ?>
 
