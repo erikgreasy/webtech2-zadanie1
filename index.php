@@ -1,8 +1,6 @@
 <?php
 
-    define( "BASE_URL", 'http://localhost/webtech/zadanie1/' );
-    date_default_timezone_set('Europe/Bratislava');
-
+    require_once 'inc/config.inc.php';
 
     if( isset( $_GET[ 'folder' ] ) && $_GET['folder'] != 'files' ) {
         $folder = rtrim( $_GET[ 'folder' ], '/' ) . '/';

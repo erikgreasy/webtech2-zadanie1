@@ -1,5 +1,6 @@
 <?php
-    define( "BASE_URL", 'http://localhost/webtech/zadanie1/' );
+
+    require_once 'inc/config.inc.php';
 
     if( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 
